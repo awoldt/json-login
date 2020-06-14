@@ -87,26 +87,13 @@ def editAcct():
                 appendData = appendJsonData.write(x)
                 appendJsonData.close()
                 print("account succesully changed!")     
-
                 break
             else:
                 continue
         if(foundEmail == False):
             print("email not found")
 
-
-
     loop = True
     while(loop == True):
         userEmail = input("enter email associated with account: ")
         lookupEmail(userEmail)
-
-    
-
-
-
-
-
-
-
-
