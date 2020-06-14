@@ -47,53 +47,48 @@ def createAcct():
     }
 
     # gets json from data.json
-    getJsonData = open("/users/alex/documents/python/json-login-master/data.json", "r")
-    jsonStr = getJsonData.read() # returns raw json string
-    pythonObj = json.loads(jsonStr) #converts json string into python dict
-    pythonObj["users"].append(userProfile)
+    with open("/users/alex/documents/python/json-login-master/data.json", "r") as x:
+        jsonStr = x.read() # returns raw json string
+        pythonObj = json.loads(jsonStr) #converts json string into python dict
+        pythonObj["users"].append(userProfile)
     # appends new json data to data.json
-    appendJsonData = open("/users/alex/documents/python/json-login-master/data.json", "w")
-    x = json.dumps(pythonObj, indent=4)
-    appendData = appendJsonData.write(x)
+    with open("/users/alex/documents/python/json-login-master/data.json", "w") as y:
+        x = json.dumps(pythonObj, indent=4)
+        appendData = y.write(x)
 
-    getJsonData.close()
-    appendJsonData.close()
     attributesIndex = 0
 
     print("\naccount created!\n")
 
-def editAcct():    
-    #searches for matching email in 
+def editAcct():
+    # gets json from data.json
+    with open("/users/alex/documents/python/json-login-master/data.json", "r") as x:
+        jsonStr = x.read() # returns raw json string
+        pythonObj = json.loads(jsonStr) #converts json string into python dict    
+    #searches for matching email strings 
     def lookupEmail(x):
-        # gets json from data.json
-        getJsonData = open("/users/alex/documents/python/json-login-master/data.json", "r")
-        jsonStr = getJsonData.read() # returns raw json string
-        pythonObj = json.loads(jsonStr) #converts json string into python dict
-        getJsonData.close()
-        # appends new json data to data.json
-        appendJsonData = open("/users/alex/documents/python/json-login-master/data.json", "w")
-
         foundEmail = False
         for i in pythonObj["users"]:
-            #if email exists
             if(i["email"] == x):
                 foundEmail = True
                 print("first name - " + i["fname"] + "\nlast name - " + i["lname"])
                 newFname = input("new first name: ")
+                newFname = newFname.lower()
                 i["fname"] = newFname
-                newFname = input("new last name: ")
-                i["lname"] = newFname
-                x = json.dumps(pythonObj, indent=4)
-                appendData = appendJsonData.write(x)
-                appendJsonData.close()
-                print("account succesully changed!")     
+                newLname = input("new last name: ")
+                newLname = newLname.lower()
+                i["lname"] = newLname
+                # appends new json data to data.json
+                with open("/users/alex/documents/python/json-login-master/data.json", "w") as y:
+                    x = json.dumps(pythonObj, indent=4)
+                    appendData = y.write(x)
+                print("\naccount succesully changed!\n")     
                 break
             else:
                 continue
-        if(foundEmail == False):
-            print("email not found")
 
-    loop = True
-    while(loop == True):
-        userEmail = input("enter email associated with account: ")
-        lookupEmail(userEmail)
+        if(foundEmail == False):
+            print("\nemail not found\n")
+
+    userEmail = input("enter email associated with account: ")
+    lookupEmail(userEmail)
