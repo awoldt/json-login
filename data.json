@@ -1,94 +1,14 @@
 {
     "users": [
         {
-            "fname": "Alexander",
-            "lname": "Breckwoldt",
-            "age": "22"
+            "fname": "brandon",
+            "lname": "m",
+            "email": "b@gmail.com"
         },
         {
-            "fname": "Richard",
-            "lname": "Wings",
-            "age": "33"
-        },
-        {
-            "fname": "will",
-            "lname": "benson",
-            "email": "wb@gmail.com"
-        },
-        {
-            "fname": "lolly",
-            "lname": "holly",
-            "email": "lh@gmail.com"
-        },
-        {
-            "fname": "loj",
-            "lname": "kou",
-            "email": "a"
-        },
-        {
-            "fname": "Alex",
-            "lname": "Bre",
-            "email": "asd"
-        },
-        {
-            "fname": "John",
-            "lname": "B",
-            "email": "hello"
-        },
-        {
-            "fname": "Alex",
-            "lname": "EEE",
-            "email": "hello@rawrXd"
-        },
-        {
-            "fname": "Alex",
-            "lname": "asdasd",
-            "email": "56tt@gmail.com"
-        },
-        {
-            "fname": "AEDLD",
-            "lname": "ASD",
-            "email": "asdasd@gmail.com"
-        },
-        {
-            "fname": "asdfasdf",
-            "lname": "asdfasdfa",
-            "email": "@gmail.com"
-        },
-        {
-            "fname": "dfsdf",
-            "lname": "asdfasdf",
-            "email": "3ert@"
-        },
-        {
-            "fname": "asdfasdf",
-            "lname": "asdfasdf",
-            "email": "@gmail.com"
-        },
-        {
-            "fname": "ASd",
-            "lname": "asdasd",
-            "email": "@"
-        },
-        {
-            "fname": "jack",
-            "lname": " ",
-            "email": "@"
-        },
-        {
-            "fname": "jack",
-            "lname": "lol",
-            "email": "hello@gmaikl"
-        },
-        {
-            "fname": "terry",
-            "lname": "allison",
-            "email": "tallison@gmail.com"
-        },
-        {
-            "fname": "poop23",
-            "lname": "popp21",
-            "email": "@gmail.com"
+            "fname": "alex",
+            "lname": "b",
+            "email": "a@gmail.com"
         }
     ]
 }

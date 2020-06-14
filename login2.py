@@ -6,9 +6,9 @@ while(loop == True):
     userCommand = input("create, edit or delete account: ")
     userCommand = userCommand.lower()
     if(userCommand == "create"):
-        userData = functions.createAcct() #fname, lname, and email info returned
+        functions.createAcct() #fname, lname, and email info returned
     elif(userCommand == "edit"):
-        print("edit!")
+        functions.editAcct()
     elif(userCommand == "delete"):
         print("delete!")
     elif(userCommand == "exit"):
