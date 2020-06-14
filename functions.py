@@ -5,19 +5,6 @@ def createAcct():
     userAttributes = ("first name: ","last name: ","email: ")
     global attributesIndex
     
-    #makes email string have '@' symbol
-    def isEmail(x):
-        loop = True
-        while(loop == True):
-            for i in x:
-                if(i == "@"):
-                    loop == False
-                    return x
-                else:
-                    continue
-            print("\n>>error: invalid email")
-            x = input("email: ")
-
     #makes input be a certain format
     def validateInput(x):
         global attributesIndex
@@ -26,6 +13,22 @@ def createAcct():
             if(len(x) == 0):
                 print("\n>>error: must enter value\n")
                 x = input(userAttributes[attributesIndex])
+            #makes sure email has '@' symbol
+            elif(attributesIndex == 2):
+                correctEmailFormat = False
+                for i in x:
+                    if(i == "@"):
+                        correctEmailFormat = True
+                        break
+                    else:
+                        continue
+                if(correctEmailFormat == False):
+                    print("\n>>error: invalid email format\n")
+                    x = input(userAttributes[attributesIndex])
+                else:
+                    error = False
+                    attributesIndex += 1
+                    return x
             else:
                 error = False
                 attributesIndex += 1
@@ -33,11 +36,13 @@ def createAcct():
                     
     fname = input("first name: ")
     fname = validateInput(fname)
+    fname = fname.lower()
     lname = input("last name: ")
     lname = validateInput(lname)
+    lname = lname.lower()
     email = input("email: ")
     email = validateInput(email)
-    email = isEmail(email)
+    email = email.lower()
 
     # assigns user input into python obj
     userProfile = {
